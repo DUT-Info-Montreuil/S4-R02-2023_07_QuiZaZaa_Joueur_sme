@@ -1,4 +1,4 @@
-package fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.impl;
+package fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.modeles;
 
 import java.util.List;
 

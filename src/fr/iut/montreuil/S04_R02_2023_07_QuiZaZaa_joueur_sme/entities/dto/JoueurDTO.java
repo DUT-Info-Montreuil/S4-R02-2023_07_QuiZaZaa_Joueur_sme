@@ -6,11 +6,11 @@ import java.util.List;
 public class JoueurDTO {
 	
 	private String prenom, pseudo;
-	private int annee_naissance, langue_preferee;
-	private List<String> centre_interets = new ArrayList<>();
+	private int annee_naissance;
+	private String centre_interets;
+	private Langues langue_preferee;
 
-	public JoueurDTO(String prenom, String pseudo, int annee_naissance, int langue_preferee,
-			List<String> centre_interets) {
+	public JoueurDTO(String prenom, String pseudo, int annee_naissance, Langues langue_preferee, String centre_interets) {
 		super();
 		this.prenom = prenom;
 		this.pseudo = pseudo;

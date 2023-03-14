@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.entities.dto.JoueurDTO;
+import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.entities.dto.Langues;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.modeles.IServiceJoueur;
 
 public class ServiceJoueurImpl implements IServiceJoueur{
@@ -25,19 +26,21 @@ public class ServiceJoueurImpl implements IServiceJoueur{
 	}
 	
 	@Override
-	public boolean ajouterJoueur(JoueurDTO jd) {
-		if (this.joueurs.contains(jd)) {
-			System.out.println("joueur existant");
-			return false;
+	public boolean ajouterJoueur(String prenom, String pseudo, int annee_naissance, Langues langue_preferee, String centre_interets) {
+		for (JoueurDTO j : this.joueurs) {
+			if (pseudo.equals(j.getPseudo())) {
+				System.out.println("joueur existant");
+				return false;
+			}
 		}
-		else if (joueurConforme(jd)) {
-			joueurs.add(jd);
+		if (joueurConforme(prenom)) {
+			this.joueurs.add(new JoueurDTO(prenom, pseudo, annee_naissance, langue_preferee, centre_interets));
 			return true;
 		}
 		return false;
 	}
 
-	private boolean joueurConforme(JoueurDTO jd) {
+	private boolean joueurConforme(String jd) {
 		return jd != null;
 	}
 

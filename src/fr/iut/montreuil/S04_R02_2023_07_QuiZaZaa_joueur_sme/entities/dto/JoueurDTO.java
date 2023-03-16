@@ -49,19 +49,19 @@ public class JoueurDTO {
 		this.annee_naissance = annee_naissance;
 	}
 
-	public int getLangue_preferee() {
+	public Langues getLangue_preferee() {
 		return langue_preferee;
 	}
 
-	public void setLangue_preferee(int langue_preferee) {
+	public void setLangue_preferee(Langues langue_preferee) {
 		this.langue_preferee = langue_preferee;
 	}
 
-	public List<String> getCentre_interets() {
+	public String getCentre_interets() {
 		return centre_interets;
 	}
 
-	public void setCentre_interets(List<String> centre_interets) {
+	public void setCentre_interets(String centre_interets) {
 		this.centre_interets = centre_interets;
 	}
 }

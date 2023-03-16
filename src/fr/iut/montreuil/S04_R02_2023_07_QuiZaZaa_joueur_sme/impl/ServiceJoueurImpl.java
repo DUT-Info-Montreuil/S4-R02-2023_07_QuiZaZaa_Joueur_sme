@@ -2,7 +2,6 @@ package fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.impl;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.entities.dto.JoueurDTO;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.entities.dto.Langues;
@@ -14,7 +13,7 @@ public class ServiceJoueurImpl implements IServiceJoueur{
 	
 	private List<JoueurDTO> joueurs;
 	
-	private ServiceJoueurImpl() {
+	public ServiceJoueurImpl() {
 		this.joueurs = new ArrayList<>();
 	}
 	
@@ -53,8 +52,14 @@ public class ServiceJoueurImpl implements IServiceJoueur{
 		return false;
 	}
 
-	public Optional<JoueurDTO> getJoueurAvecPseudo(String pseudo) {
-		return this.joueurs.stream().filter(x->x.getPseudo().equals(pseudo)).findAny();
+	public JoueurDTO getJoueurAvecPseudo(String pseudo) {
+		JoueurDTO j = null;
+		for(int i = 0; i < this.joueurs.size(); i++) {
+			if (this.joueurs.get(i).getPseudo().equals(pseudo)) {
+				return this.joueurs.get(i);
+			}
+		}
+		return j;
 	}
 
 	@Override

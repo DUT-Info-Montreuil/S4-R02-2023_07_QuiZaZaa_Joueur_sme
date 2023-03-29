@@ -12,5 +12,14 @@ public interface IServiceJoueur {
 	public boolean supprimerJoueur(String pseudo);
 	
 	public List<JoueurDTO> listerJoueur();
+	
+	public int getNombrePartieJouées();
+	
+	public int getBonneReponses();
+	
+	public int getMoyenneGenerale();
+	
+	public int getDuréeMoyenne();
+	
 
 }

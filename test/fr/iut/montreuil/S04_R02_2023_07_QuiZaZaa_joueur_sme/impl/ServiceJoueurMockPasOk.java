@@ -46,8 +46,6 @@ public class ServiceJoueurMockPasOk implements IServiceJoueur{
 	 
 	 */
 
-
-
 	public boolean supprimerJoueur(String pseudo){
 		return false;
 	}
@@ -59,46 +57,31 @@ public class ServiceJoueurMockPasOk implements IServiceJoueur{
 	}
 
 
-
-	@Override
 	public int nbrPartieJouee(String pseudoJoueur) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-
-
-	@Override
 	public int nbrBonneReponsesTotal(String pseudoJoueur) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-
-
-	@Override
 	public int nbrQuestionsRepondusTotal(String pseudoJoueur) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
 
-
-	@Override
 	public double moyenneGeneraleSur10(String pseudoJoueur) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
 
-
-
-	@Override
 	public double dureeMoyenneGenerale(String pseudoJoueur) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
-
 
 	@Override
 	public StatsDTO ajouterStats(String pseudoJoueur, int duree, int nbrBonneReponse, int questionnaireId,

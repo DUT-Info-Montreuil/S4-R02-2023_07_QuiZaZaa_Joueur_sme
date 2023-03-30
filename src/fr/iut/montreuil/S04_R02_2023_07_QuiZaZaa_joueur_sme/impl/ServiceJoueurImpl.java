@@ -7,6 +7,7 @@ import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.entities.dto.JoueurD
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.entities.dto.Langues;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.entities.dto.StatsDTO;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.entities.exceptions.JoueurExistant;
+import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.entities.exceptions.StatsIncorrecte;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.modeles.IServiceJoueur;
 
 public class ServiceJoueurImpl implements IServiceJoueur{
@@ -117,10 +118,16 @@ public class ServiceJoueurImpl implements IServiceJoueur{
 	}
 
 	@Override
-	public StatsDTO ajouterStats(String pseudoJoueur, int duree, int nbrBonneReponse, int questionnaireId,
-			int nbrQuestions) {
-		// TODO Auto-generated method stub
-		return null;
+	public StatsDTO ajouterStats(String pseudoJoueur, int duree, int nbrBonneReponse, int questionnaireId, int nbrQuestions) {
+		StatsDTO s = null;
+		try {
+			s = new StatsDTO(duree, nbrBonneReponse, questionnaireId, nbrQuestions);
+		} catch (StatsIncorrecte e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		getJoueurAvecPseudo(pseudoJoueur).ajouterStats(s);
+		return s;
 	}
 
 	//TO DO comment organiser le donnée ? Sortedset d'un objet couple de valeur ?

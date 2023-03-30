@@ -6,6 +6,7 @@ import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.entities.dto.JoueurD
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.entities.dto.Langues;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.entities.dto.StatsDTO;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.entities.exceptions.JoueurExistant;
+import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.entities.exceptions.StatsIncorrecte;
 
 public interface IServiceJoueur {
 	
@@ -15,6 +16,6 @@ public interface IServiceJoueur {
 	
 	public List<JoueurDTO> listerJoueur();
 	
-	public StatsDTO ajouterStats(String pseudoJoueur,int duree, int nbrBonneReponse, int questionnaireId,  int nbrQuestions);
+	public StatsDTO ajouterStats(String pseudoJoueur,int duree, int nbrBonneReponse, int questionnaireId,  int nbrQuestions) throws StatsIncorrecte;
 
 }

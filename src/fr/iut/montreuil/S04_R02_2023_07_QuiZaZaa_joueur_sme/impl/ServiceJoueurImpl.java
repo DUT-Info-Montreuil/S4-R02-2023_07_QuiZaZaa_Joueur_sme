@@ -75,14 +75,8 @@ public class ServiceJoueurImpl implements IServiceJoueur{
 	}
 
 	@Override
-	public StatsDTO ajouterStats(String pseudoJoueur, int duree, int nbrBonneReponse, int questionnaireId, int nbrQuestions) {
-		StatsDTO s = null;
-		try {
-			s = new StatsDTO(duree, nbrBonneReponse, questionnaireId, nbrQuestions);
-		} catch (StatsIncorrecte e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public StatsDTO ajouterStats(String pseudoJoueur, int duree, int nbrBonneReponse, int questionnaireId, int nbrQuestions) throws StatsIncorrecte{
+		StatsDTO s = new StatsDTO(duree, nbrBonneReponse, questionnaireId, nbrQuestions);
 		getJoueurAvecPseudo(pseudoJoueur).ajouterStats(s);
 		return s;
 	}

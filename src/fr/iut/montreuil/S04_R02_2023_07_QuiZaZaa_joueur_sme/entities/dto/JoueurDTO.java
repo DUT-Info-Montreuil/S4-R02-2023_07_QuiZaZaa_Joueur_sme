@@ -5,10 +5,12 @@ import java.util.List;
 
 public class JoueurDTO {
 	
-	private String prenom, pseudo;
+	private String prenom;
+	private String pseudo;
 	private int annee_naissance;
 	private String centre_interets;
 	private Langues langue_preferee;
+	private List<StatsDTO> stats;
 
 	public JoueurDTO(String prenom, String pseudo, int annee_naissance, Langues langue_preferee, String centre_interets) {
 		super();
@@ -17,6 +19,7 @@ public class JoueurDTO {
 		this.annee_naissance = annee_naissance;
 		this.langue_preferee = langue_preferee;
 		this.centre_interets = centre_interets;
+		this.stats = new ArrayList<StatsDTO>();
 	}
 
 	@Override
@@ -63,5 +66,13 @@ public class JoueurDTO {
 
 	public void setCentre_interets(String centre_interets) {
 		this.centre_interets = centre_interets;
+	}
+	
+	public void ajouterStats(StatsDTO stats) {
+		this.stats.add(stats);
+	}
+
+	public List<StatsDTO> getStats() {
+		return stats;
 	}
 }

@@ -19,7 +19,6 @@ public class StatsDTO {
 		this.nbrBonneReponse = nbrBonneReponse;
 		this.questionnaireId = questionnaireId;
 		this.nbrQuestions = nbrQuestions;
-		setMoyenneBonneReponseSur10();
 	}
 
 	public int getQuestionnaireId() {
@@ -38,8 +37,8 @@ public class StatsDTO {
 		return duree;
 	}
 	
-	private void setMoyenneBonneReponseSur10() {
-		this.moyenneBonneReponseSur10 = ((double) getNbrBonneReponse() / (double) getNbrQuestions()) * 10;
+	public void setMoyenneBonneReponseSur10(double moyenneBonneReponseSur10) {
+		this.moyenneBonneReponseSur10 = moyenneBonneReponseSur10;
 	}
 	
 	public double getMoyenneBonneReponseSur10() {

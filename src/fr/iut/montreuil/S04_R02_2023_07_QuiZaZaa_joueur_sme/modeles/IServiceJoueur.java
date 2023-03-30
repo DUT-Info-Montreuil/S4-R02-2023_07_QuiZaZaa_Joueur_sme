@@ -15,16 +15,6 @@ public interface IServiceJoueur {
 	
 	public List<JoueurDTO> listerJoueur();
 	
-	public int nbrPartieJouee(String pseudoJoueur);
-	
-	public int nbrBonneReponsesTotal(String pseudoJoueur);
-	
-	public int nbrQuestionsRepondusTotal(String pseudoJoueur);
-	
-	public double moyenneGeneraleSur10(String pseudoJoueur);
-	
-	public double dureeMoyenneGenerale(String pseudoJoueur);
-	
 	public StatsDTO ajouterStats(String pseudoJoueur,int duree, int nbrBonneReponse, int questionnaireId,  int nbrQuestions);
 
 }

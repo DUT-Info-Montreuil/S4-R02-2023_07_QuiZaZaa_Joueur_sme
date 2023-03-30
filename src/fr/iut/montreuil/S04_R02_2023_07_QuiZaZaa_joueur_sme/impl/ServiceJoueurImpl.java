@@ -28,7 +28,6 @@ public class ServiceJoueurImpl implements IServiceJoueur{
 	}
 	
 	
-	// TO DO : REMETTRE EN CAUSE L'UTILISATION D'UN BOOLEAN
 	@Override
 	public boolean ajouterJoueur(String prenom, String pseudo, int annee_naissance, Langues langue_preferee, String centre_interets) throws JoueurExistant {
 		
@@ -73,48 +72,6 @@ public class ServiceJoueurImpl implements IServiceJoueur{
 	@Override
 	public List<JoueurDTO> listerJoueur() {
 		return this.joueurs;
-	}
-
-
-	@Override
-	public int nbrPartieJouee(String pseudoJoueur) {
-		return getJoueurAvecPseudo(pseudoJoueur).getStats().size();
-	}
-
-	@Override
-	public int nbrBonneReponsesTotal(String pseudoJoueur) {
-		int nbrBonneReponseTotal = 0;
-		for (StatsDTO stats : getJoueurAvecPseudo(pseudoJoueur).getStats()) {
-			nbrBonneReponseTotal += stats.getNbrBonneReponse();
-		}
-		return nbrBonneReponseTotal;
-	}
-
-	@Override
-	public int nbrQuestionsRepondusTotal(String pseudoJoueur) {
-		int nbrQuestionsRepondusTotal = 0;
-		for (StatsDTO stats : getJoueurAvecPseudo(pseudoJoueur).getStats()) {
-			nbrQuestionsRepondusTotal += stats.getNbrBonneReponse();
-		}
-		return nbrQuestionsRepondusTotal;
-	}
-
-	@Override
-	public double moyenneGeneraleSur10(String pseudoJoueur) {
-		double moyenneGeneraleSur10 = 0;
-		for (StatsDTO stats : getJoueurAvecPseudo(pseudoJoueur).getStats()) {
-			moyenneGeneraleSur10 += stats.getMoyenneBonneReponseSur10();
-		}
-		return moyenneGeneraleSur10 / nbrPartieJouee(pseudoJoueur);
-	}
-
-	@Override
-	public double dureeMoyenneGenerale(String pseudoJoueur) {
-		double dureeMoyenneGenerale = 0;
-		for (StatsDTO stats : getJoueurAvecPseudo(pseudoJoueur).getStats()) {
-			dureeMoyenneGenerale += stats.getDuree();
-		}
-		return dureeMoyenneGenerale / nbrPartieJouee(pseudoJoueur);
 	}
 
 	@Override

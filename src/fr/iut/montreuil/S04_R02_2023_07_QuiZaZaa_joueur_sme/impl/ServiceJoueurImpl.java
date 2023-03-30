@@ -116,6 +116,13 @@ public class ServiceJoueurImpl implements IServiceJoueur{
 		return dureeMoyenneGenerale / nbrPartieJouee(pseudoJoueur);
 	}
 
+	@Override
+	public StatsDTO ajouterStats(String pseudoJoueur, int duree, int nbrBonneReponse, int questionnaireId,
+			int nbrQuestions) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	//TO DO comment organiser le donnée ? Sortedset d'un objet couple de valeur ?
 //	public void dernieresPartiesJouees(String pseudoJoueur, int nombreDeParties){
 //	

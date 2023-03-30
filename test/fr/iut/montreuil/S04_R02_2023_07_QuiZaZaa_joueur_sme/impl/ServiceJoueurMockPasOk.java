@@ -3,6 +3,7 @@ import java.util.List;
 
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.entities.dto.JoueurDTO;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.entities.dto.Langues;
+import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.entities.dto.StatsDTO;
 import fr.iut.montreuil.S04_R02_2023_07_QuiZaZaa_joueur_sme.modeles.IServiceJoueur;
 
 public class ServiceJoueurMockPasOk implements IServiceJoueur{
@@ -55,6 +56,55 @@ public class ServiceJoueurMockPasOk implements IServiceJoueur{
 	public List<JoueurDTO> listerJoueur(){
 		return null;
 
+	}
+
+
+
+	@Override
+	public int nbrPartieJouee(String pseudoJoueur) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+	@Override
+	public int nbrBonneReponsesTotal(String pseudoJoueur) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+	@Override
+	public int nbrQuestionsRepondusTotal(String pseudoJoueur) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+	@Override
+	public double moyenneGeneraleSur10(String pseudoJoueur) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+	@Override
+	public double dureeMoyenneGenerale(String pseudoJoueur) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
+	@Override
+	public StatsDTO ajouterStats(String pseudoJoueur, int duree, int nbrBonneReponse, int questionnaireId,
+			int nbrQuestions) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
 
